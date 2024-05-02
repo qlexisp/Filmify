@@ -6,7 +6,7 @@ export function MenuIcon() {
 
 export function CloseMenu({ isOpen }) {
     return (
-        <div className="relative text-white text-right font-bold uppercase">
+        <div className="relative font-bold text-right text-white uppercase">
             <div className="flex justify-end">
                 <img className="w-6 h-6 mb-2" src="src/assets/closemenu.png" alt="Close menu" />
             </div>
