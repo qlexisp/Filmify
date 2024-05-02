@@ -4,15 +4,17 @@ export function MenuIcon() {
     );
 }
 
-export function CloseMenu() {
+export function CloseMenu({ isOpen }) {
     return (
-        <>
-            <img className="w-6 h-6" src="src/assets/closemenu.png" />
-            <div className="flex flex-col items-center flex-wrap">
-                <a href="#Home" className="mr-2">Home</a>
-                <a href="#Movies" className="mr-2">Movies</a>
-                <a href="#Tvshows" className="">Tv shows</a>
+        <div className="relative text-white text-right font-bold uppercase">
+            <div className="flex justify-end">
+                <img className="w-6 h-6 mb-2" src="src/assets/closemenu.png" alt="Close menu" />
             </div>
-        </>
+            <div className={`transform ${isOpen ? 'translate-y-0' : '-translate-y-full'}`}>
+                <a href="#Home" className="block hover:text-gray-500 hover:duration-300">Home</a>
+                <a href="#Movies" className="block hover:text-gray-500 hover:duration-300">Movies</a>
+                <a href="#Tvshows" className="block hover:text-gray-500 hover:duration-300">Tv shows</a>
+            </div>
+        </div>
     );
 }

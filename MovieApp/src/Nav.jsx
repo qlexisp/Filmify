@@ -10,16 +10,16 @@ export default function Nav() {
     };
 
     return (
-            <nav className="text-white">
-                <div className="hidden md:flex">
-                    <a href="#Home" className="mr-2">Home</a>
-                    <a href="#Movies" className="mr-2">Movies</a>
-                    <a href="#Tvshows" className="">Tv shows</a>
-                </div>
+        <nav className="text-white">
+            <div className="hidden md:flex md:uppercase md:font-bold">
+                <a href="#Home" className="mr-2 hover:text-gray-500 hover:duration-300">Home</a>
+                <a href="#Movies" className="mr-2 hover:text-gray-500 hover:duration-300">Movies</a>
+                <a href="#Tvshows" className="hover:text-gray-500 hover:duration-300">Tv shows</a>
+            </div>
 
-                <div className="md:hidden flex items-center">
-                    <button onClick={toggleNavbar}>{isOpen ? <CloseMenu /> : <MenuIcon /> }</button>
-                </div>
-            </nav>
+            <div className="md:hidden flex items-center">
+                <button onClick={toggleNavbar}>{isOpen ? <CloseMenu isOpen={isOpen} /> : <MenuIcon />}</button>
+            </div>
+        </nav>
     )
 }
