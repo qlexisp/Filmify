@@ -40,14 +40,26 @@ export default function SearchMovie() {
                     </button>
                 </div>
             </form>
+            <div className="bg-[#1a1820]">
+                <div className="mx-6 my-6">
+                    <p className="text-xl font-bold text-red-600">Results for</p>
+                    <h2 className="text-4xl font-bold text-white">{query}</h2>
+                </div>
+                <div className="flex flex-col mx-6 text-white">
 
-            <div className="grid grid-cols-2 gap-4 mx-4 text-white">
-                {movies.map(movie => (
-                    <div key={movie.id} className="p-4 mb-2 font-bold bg-gray-600">
-                        <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} />
-                        {movie.title}
-                    </div>
-                ))}
+                    {movies.map(movie => (
+                        <div key={movie.id} className="flex items-center justify-center my-4">
+                            <div className="">
+                                <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt={movie.title} className="rounded-lg" />
+                                <p className="mt-4 text-2xl font-bold">{movie.title.length > 20 ? `${movie.title.substring(0, 25)}...` : movie.title}</p>
+                                <div className="flex items-center justify-between mt-2">
+                                    <p className="text-xl font-bold">⭐ {movie.vote_average}</p>
+                                    <p className="flex px-2 py-1 font-bold bg-gray-700 rounded">{new Date(movie.release_date).getFullYear()}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </div>
         </>
     )

@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className="h-screen bg-gray-800">
+      <div className="h-screen bg-[#1a1820]">
         <Header />
         <SearchMovie />
       </div>
