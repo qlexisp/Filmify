@@ -1,13 +1,17 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function SearchMovie() {
 
     const [query, setQuery] = useState("");
     const [movies, setMovies] = useState([]);
+    const history = useNavigate();
 
     const searchMovie = async (e) => {
         e.preventDefault();
 
         const url = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=e0fa0c69b5ec0c1fd6153567c8a33701`;
+        history(`/search/${query}`);
 
         try {
             const res = await fetch(url)
@@ -17,11 +21,11 @@ export default function SearchMovie() {
         catch (error) {
             console.error(err);
         }
+    };
 
-    }
     const handleInputChange = (e) => {
         setQuery(e.target.value);
-    }
+    };
 
     return (
         <>
@@ -48,8 +52,8 @@ export default function SearchMovie() {
                 <div className="flex grid flex-col mx-6 text-white lg:grid-cols-6 lg:gap-5 lg:mx-20">
                     {movies.map(movie => (
                         <div key={movie.id} className="flex items-center justify-center my-4">
-                            <div className="h-full w-full flex flex-col">
-                                <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'src/assets/poster_unavailable.jpg'} alt={movie.title} className="rounded-lg bg-gray-600 w-auto h-auto" />
+                            <div className="flex flex-col w-full h-full">
+                                <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'src/assets/poster_unavailable.jpg'} alt={movie.title} className="w-auto h-auto bg-gray-600 rounded-lg" />
                                 <p className="mt-4 text-2xl font-bold lg:text-sm">{movie.title.length > 20 ? `${movie.title.substring(0, 25)}...` : movie.title}</p>
                                 <div className="flex items-center justify-center justify-between mt-2">
                                     <p className="text-lg font-bold lg:text-base">⭐ {movie.vote_average > 3 ? `${movie.vote_average.toFixed(1)}` : movie.vote_average}</p>

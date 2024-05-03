@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MenuIcon } from './ResponsiveNav'
 import { CloseMenu } from './ResponsiveNav'
+import { NavLink } from "react-router-dom"
 
 export default function Nav() {
 
@@ -12,7 +13,7 @@ export default function Nav() {
     return (
         <nav className="flex items-center justify-center text-white">
             <div className="hidden md:flex md:uppercase md:font-bold">
-                <a href="#Home" className="mr-2 hover:text-gray-500 hover:duration-300">Home</a>
+                <NavLink to="/" className="mr-2 hover:text-gray-500 hover:duration-300">Home</NavLink>
                 <a href="#Movies" className="mr-2 hover:text-gray-500 hover:duration-300">Movies</a>
                 <a href="#Tvshows" className="hover:text-gray-500 hover:duration-300">Tv shows</a>
             </div>
