@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Header from './Header'
-import SearchMovie from './Search'
+import SearchBar from './SearchBar'
 
 function App() {
 
@@ -8,7 +8,7 @@ function App() {
     <>
       <div className="h-screen bg-[#1a1820]">
         <Header />
-        <SearchMovie />
+        <SearchBar />
       </div>
     </>
   )
