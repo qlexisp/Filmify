@@ -2,13 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import NotFound from './404NotFound.jsx';
-import Search from './Search.jsx';
+import Search from './Search/Search.jsx';
 import { createBrowserRouter, RouterProvider, json } from 'react-router-dom';
+import DisplaySearchDetails from '../src/Search/DisplaySearchDetails.jsx';
 
 const router = createBrowserRouter([{
   path: '/',
   element: <App />,
   errorElement: <NotFound />,
+
 },
 {
   path: '/search/:query',
@@ -19,6 +21,11 @@ const router = createBrowserRouter([{
     return await data.json();
   },
   element: <Search />,
+  errorElement: <NotFound />
+},
+{
+  path: '/movie/:id',
+  element: <DisplaySearchDetails />,
   errorElement: <NotFound />
 }
 ]);

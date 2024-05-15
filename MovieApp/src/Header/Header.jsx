@@ -1,4 +1,4 @@
-import Nav from './Nav'
+import Nav from './Components/Nav'
 import { NavLink } from "react-router-dom"
 export default function Header() {
 

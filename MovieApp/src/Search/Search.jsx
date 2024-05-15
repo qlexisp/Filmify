@@ -1,12 +1,11 @@
-import { useNavigate, useLoaderData } from "react-router-dom";
-import SearchResult from './searchResult';
-import SearchBar from './SearchBar';
-import Header from './Header';
+import { useLoaderData } from "react-router-dom";
+import SearchResult from './SearchResult';
+import SearchBar from '../Search/SearchBar';
+import Header from '../Header/Header';
 
 export default function SearchMovie() {
 
     const movies = useLoaderData();
-    console.log(movies);
     if (movies.isLoading) {
         return <div>Loading...</div>;
     }

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { MenuIcon } from './ResponsiveNav'
-import { CloseMenu } from './ResponsiveNav'
+import { MenuIcon } from '../Components/ResponsiveNav'
+import { CloseMenu } from '../Components/ResponsiveNav'
 import { NavLink } from "react-router-dom"
 
 export default function Nav() {

@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import Header from './Header'
-import SearchBar from './SearchBar'
+import Header from './Header/Header'
+
+import SearchBar from './Search/SearchBar'
 
 function App() {
 
