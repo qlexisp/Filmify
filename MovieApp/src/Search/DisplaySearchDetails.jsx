@@ -24,20 +24,24 @@ export default function DisplaySearchDetails() {
 
     return (
         <>
-            <div className="h-screen bg-[#1a1820] h-full">
+            <div className="bg-[#1a1820]">
                 <Header />
                 <SearchBar />
                 {movie ? (
                     <div className="flex flex-col pb-12">
                         <div className="flex items-center justify-center">
-                            <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="w-auto h-auto bg-gray-600 rounded-lg w-[75%] h-[75%] mb-6" />
+                            <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="bg-gray-600 rounded-lg w-[90%] h-[90%] mb-6" />
                         </div>
                         <div className="mx-6">
                             <h2 className="text-3xl font-bold text-white">{movie.title}</h2>
                             <ul className="flex items-center mt-2 text-white">
-                                <li className="mr-4 text-lg font-bold lg:text-base">⭐ {movie.vote_average > 3 ? `${movie.vote_average.toFixed(1)}` : movie.vote_average}</li>
+                                <li className="mr-4 text-lg font-bold lg:text-base">⭐ {movie.vote_average > 3 ? `${movie.vote_average.toFixed(1)}` : movie.vote_average} -</li>
                                 <li className="mr-4 text-lg font-bold lg:text-base">{movie.runtime}m</li>
                                 <li className="text-lg font-bold lg:text-base">{movie.release_date ? new Date(movie.release_date).getFullYear() : "?"}</li>
+                            </ul>
+                            <ul className="flex text-white">{movie.genres.map(genre => (
+                                <li key={genre.id}>{genre.name} </li>
+                            ))}
                             </ul>
                             <p className="mt-4 text-white">{movie.overview}</p>
                         </div>
