@@ -2,12 +2,11 @@ import { NavLink } from "react-router-dom"
 
 export default function SearchResult({ movies }) {
     return (
-        <div className="bg-[#1a1820]">
+        <div className="bg-[#191919]">
             <div className="mx-6 my-6 lg:mx-20">
-                <p className="text-xl font-bold text-red-600">Results for </p>
-                <h2 className="text-4xl font-bold text-white"></h2>
+                <h2 className="text-4xl font-bold text-[#EEEEEE]"></h2>
             </div>
-            <div className="flex grid flex-col mx-6 text-white lg:grid-cols-6 lg:gap-5 lg:mx-20">
+            <div className="flex grid flex-col mx-6 text-[#EEEEEE] lg:grid-cols-6 lg:gap-5 lg:mx-20">
                 {movies.map(movie => (
                     <div key={movie.id} className="flex items-center justify-center my-4">
                         <div className="flex flex-col w-full h-full">

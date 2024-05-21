@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className="h-screen bg-[#1a1820]">
+      <div className="h-screen bg-[#191919]">
         <Header />
         <DiscoverMovies />
       </div>

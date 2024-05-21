@@ -23,7 +23,7 @@ export default function DisplaySearchDetails() {
 
     return (
         <>
-            <div className="bg-[#1a1820] h-full">
+            <div className="bg-[#191919] h-full">
                 <Header />
                 {movie ? (
                     <div className="flex flex-col pb-12 my-16 lg:flex-row lg:mx-20">
@@ -31,22 +31,22 @@ export default function DisplaySearchDetails() {
                             <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="bg-gray-600 rounded-lg w-[90%] h-[90%] mb-6 lg:w-full lg:h-full" />
                         </div>
                         <div className="mx-6 lg:mt-6">
-                            <h2 className="text-3xl font-bold text-white">{movie.title}</h2>
-                            <ul className="flex items-center mt-2 text-white">
+                            <h2 className="text-3xl font-bold text-[#EEEEEE]">{movie.title}</h2>
+                            <ul className="flex items-center mt-2 text-[#EEEEEE]">
                                 <li className="mr-4 text-lg font-bold lg:text-base">⭐ {movie.vote_average > 3 ? `${movie.vote_average.toFixed(1)}` : movie.vote_average} </li>
                                 <li className="mr-4 text-lg font-bold lg:text-base">{movie.runtime}m</li>
                                 <li className="text-lg font-bold lg:text-base">{movie.release_date ? new Date(movie.release_date).getFullYear() : "?"}</li>
                             </ul>
-                            <ul className="flex text-gray-400 mt-1">
-                                <li className="text-white">
+                            <ul className="flex mt-1 text-gray-400">
+                                <li className="text-[#8E8E8E]">
                                     {movie.genres
                                         .map(genre => genre.name)
                                         .join(', ')}
                                 </li>
                             </ul>
-                            <ul className="text-white font-bold mt-2">
-                                <span className="text-gray-400">Directed by </span>
-                                <li className="mr-2 inline">
+                            <ul className="mt-2 text-[#EEEEEE]">
+                                <span className="text-[#8E8E8E] font-bold">Directed by </span>
+                                <li className="inline mr-2">
                                     {movie.casts.crew
                                         .filter(crew => crew.job === "Director")
                                         .slice(0, 2)
@@ -54,9 +54,9 @@ export default function DisplaySearchDetails() {
                                         .join(', ')}
                                 </li>
                             </ul>
-                            <ul className="text-white mt-2 font-bold">
-                                <span className="text-gray-400 items-start">Starring </span>
-                                <li className="mr-2 inline">
+                            <ul className="mt-2 text-[#EEEEEE]">
+                                <span className="items-start font-bold text-[#8E8E8E]">Starring </span>
+                                <li className="inline mr-2">
                                     {movie.casts.cast
                                         .filter(cast => cast.known_for_department === "Acting")
                                         .slice(0, 9)
@@ -64,7 +64,7 @@ export default function DisplaySearchDetails() {
                                         .join(', ')}
                                 </li>
                             </ul>
-                            <p className="mt-4 text-white">{movie.overview}</p>
+                            <p className="mt-4 text-[#EEEEEE]">{movie.overview}</p>
                         </div>
                     </div>
                 )
