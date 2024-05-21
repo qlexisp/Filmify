@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import NotFound from './404NotFound.jsx';
 import Search from './Search/Search.jsx';
-import { createBrowserRouter, RouterProvider, json } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import DisplaySearchDetails from '../src/Search/DisplaySearchDetails.jsx';
 import SearchResult from './Search/SearchResult.jsx';
 
@@ -11,7 +11,6 @@ const router = createBrowserRouter([{
   path: '/',
   element: <App />,
   errorElement: <NotFound />,
-
 },
 {
   path: '/search',

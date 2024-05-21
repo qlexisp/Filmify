@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import Header from './Header/Header'
-
-import SearchBar from './Search/SearchBar'
+import DiscoverMovies from './HomePage/DiscoverMovies'
 
 function App() {
 
@@ -9,7 +8,7 @@ function App() {
     <>
       <div className="h-screen bg-[#1a1820]">
         <Header />
-        <SearchBar />
+        <DiscoverMovies />
       </div>
     </>
   )

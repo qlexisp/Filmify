@@ -1,6 +1,5 @@
 import { useLoaderData } from "react-router-dom";
 import SearchResult from './SearchResult';
-import SearchBar from '../Search/SearchBar';
 import Header from '../Header/Header';
 
 export default function SearchMovie() {
@@ -17,7 +16,6 @@ export default function SearchMovie() {
         <>
             <div className="h-screen bg-[#1a1820]">
                 <Header />
-                <SearchBar />
                 <SearchResult movies={movies.results} />
             </div>
         </>

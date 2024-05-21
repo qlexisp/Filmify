@@ -1,7 +1,6 @@
 import { useParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import Header from '../Header/Header';
-import SearchBar from './SearchBar';
 
 export default function DisplaySearchDetails() {
 
@@ -26,9 +25,8 @@ export default function DisplaySearchDetails() {
         <>
             <div className="bg-[#1a1820] h-full">
                 <Header />
-                <SearchBar />
                 {movie ? (
-                    <div className="flex flex-col pb-12 lg:flex-row lg:mx-20">
+                    <div className="flex flex-col pb-12 my-16 lg:flex-row lg:mx-20">
                         <div className="flex items-center justify-center">
                             <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="bg-gray-600 rounded-lg w-[90%] h-[90%] mb-6 lg:w-full lg:h-full" />
                         </div>

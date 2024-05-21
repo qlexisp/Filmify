@@ -1,5 +1,7 @@
 import Nav from './Components/Nav'
 import { NavLink } from "react-router-dom"
+import SearchBar from '../Search/SearchBar'
+
 export default function Header() {
 
     return (
@@ -7,6 +9,7 @@ export default function Header() {
             <h1 className="text-2xl font-bold text-white uppercase">
                 <NavLink to="/">Movie App</NavLink>
             </h1>
+            <SearchBar />
             <Nav />
         </div>
     )
