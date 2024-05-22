@@ -27,7 +27,10 @@ export default function DiscoverMovies() {
 
     return (
         <>
-            <Swiper pagination={true} modules={[Pagination, Autoplay]} className="mySwiper text-[#EEEEEE] my-8 w-[90%] h-[50%] rounded-2xl hidden">
+            <Swiper pagination={true}
+            modules={[Pagination, Autoplay]}
+            autoplay={{delay: 5000}}
+            className="mySwiper text-[#EEEEEE] my-8 w-[90%] h-[50%] rounded-2xl">
                 {movies
                     .slice(0, 10)
                     .map(movie => (
