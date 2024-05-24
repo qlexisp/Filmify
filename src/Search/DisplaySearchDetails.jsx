@@ -28,7 +28,7 @@ export default function DisplaySearchDetails() {
                 {movie ? (
                     <div className="flex flex-col pb-12 my-16 lg:flex-row lg:mx-20">
                         <div className="flex items-center justify-center">
-                            <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="bg-gray-600 rounded-lg w-[90%] h-[90%] mb-6 lg:w-full lg:h-full" />
+                            <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="bg-gray-600 rounded-lg w-[90%] h-[90%] mb-6 lg:w-[300px] lg:h-auto lg:bg-contain" />
                         </div>
                         <div className="mx-6 lg:mt-6">
                             <h2 className="text-3xl font-bold text-[#EEEEEE]">{movie.title}</h2>

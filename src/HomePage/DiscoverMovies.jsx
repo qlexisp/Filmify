@@ -5,6 +5,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 // import '../styles.css';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { NavLink } from 'react-router-dom';
 
 export default function DiscoverMovies() {
 
@@ -38,27 +39,29 @@ export default function DiscoverMovies() {
                             <SwiperSlide key={movie.id}>
                                 <div className="h-full">
                                     <img className="block object-cover w-full h-full backdrop-image brightness-50" src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={`Backdrop for ${movie.id}`} />
-                                    
+
                                     <div className="w-full h-full lg:top-0 lg:left-0 lg:absolute">
-                                        
+
                                         <img className="poster-image absolute hidden lg:block lg:top-10 lg:left-10 lg:w-[12%] lg:h-auto z-10 rounded-lg shadow-md" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
                                         {/* <img className="w-[50%] h-auto lg:hidden rounded-lg absolute" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} /> */}
-                                        
+
                                         {/* <h2 className="text-[#EEEEEE] absolute top-[85%] text-xl font-bold md:hidden lg:hidden">{movie.title}</h2> */}
-                                        
+
                                         <div className="static hidden lg:block lg:absolute lg:top-[19%] lg:left-[18%] text-[#EEEEEE] lg:z-20">
-                                            
+
                                             <h2 className="mb-4 text-2xl font-bold lg:text-3xl">{movie.title}</h2>
 
-                                            <p className="hidden lg:block lg:text-[#EEEEEE]">{movie.overview}</p>
+                                            <p className="hidden lg:block lg:text-[#EEEEEE] lg:w-[95%]">{movie.overview.length ? `${movie.overview.substring(0, 300)}...` : movie.overview}</p>
 
                                             <ul className="flex items-center mt-2 text-[#EEEEEE]">
                                                 <li className="mr-4 font-bold">⭐ {movie.vote_average > 3 ? `${movie.vote_average.toFixed(1)}` : movie.vote_average} </li>
                                                 <li className="font-bold">{movie.release_date ? new Date(movie.release_date).getFullYear() : "?"}</li>
                                             </ul>
 
-                                            <button className="px-2 py-3 mt-4 font-bold bg-blue-600 rounded hover:bg-blue-700">Read More</button>
-                                            
+                                            <button className="px-2 py-3 mt-4 font-bold bg-blue-600 rounded hover:bg-blue-700 transition duration-300">
+                                            <NavLink to={`/movie/${movie.id}`}>Read More</NavLink>
+                                            </button>
+
                                         </div>
                                     </div>
                                 </div>

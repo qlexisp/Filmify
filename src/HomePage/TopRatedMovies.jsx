@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { NavLink } from 'react-router-dom';
 
 export default function TopRatedMovies() {
     const [movies, setMovies] = useState([]);
@@ -28,25 +29,25 @@ export default function TopRatedMovies() {
                 <Swiper
                     slidesPerView={3}
                     spaceBetween={30}
-                    autoplay={{delay: 5000}}
+                    autoplay={{ delay: 5000 }}
                     pagination={{
                         clickable: true,
                     }}
                     modules={[Scrollbar, Autoplay]}
                     breakpoints={{
                         300: {
-                          slidesPerView: 2,
-                          spaceBetween: 10,
+                            slidesPerView: 2,
+                            spaceBetween: 10,
                         },
                         640: {
-                          slidesPerView: 3,
-                          spaceBetween: 40,
+                            slidesPerView: 3,
+                            spaceBetween: 40,
                         },
                         1024: {
-                          slidesPerView: 6,
-                          spaceBetween: 20,
+                            slidesPerView: 6,
+                            spaceBetween: 20,
                         },
-                      }}
+                    }}
                     className="mySwiper"
                 >
 
@@ -54,7 +55,9 @@ export default function TopRatedMovies() {
                         .slice(0, 10)
                         .map(movie => (
                             <SwiperSlide key={movie.id}>
-                                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="rounded-lg shadow-md" />
+                                <NavLink to={`/movie/${movie.id}`}>
+                                    <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="rounded-lg shadow-md" />
+                                </NavLink>
                             </SwiperSlide>
                         ))}
                 </Swiper>

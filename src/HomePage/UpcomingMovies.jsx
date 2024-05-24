@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Scrollbar, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
+import { NavLink } from 'react-router-dom';
 
 export default function UpcomingMovies() {
     const [movies, setMovies] = useState([]);
@@ -24,40 +25,42 @@ export default function UpcomingMovies() {
 
     return (
         <div className="mx-6 lg:mx-20 text-[#EEEEEE]">
-        <h2 className="text-2xl font-bold mb-2">Upcoming Movies</h2>
-        <Swiper
-            slidesPerView={3}
-            autoplay={{delay: 5000}}
-            spaceBetween={30}
-            pagination={{
-                clickable: true,
-            }}
-            modules={[Scrollbar, Autoplay]}
-            breakpoints={{
-                300: {
-                  slidesPerView: 2,
-                  spaceBetween: 10,
-                },
-                640: {
-                  slidesPerView: 3,
-                  spaceBetween: 40,
-                },
-                1024: {
-                  slidesPerView: 6,
-                  spaceBetween: 20,
-                },
-              }}
-            className="mySwiper"
-        >
+            <h2 className="text-2xl font-bold mb-2">Upcoming Movies</h2>
+            <Swiper
+                slidesPerView={3}
+                autoplay={{ delay: 5000 }}
+                spaceBetween={30}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Scrollbar, Autoplay]}
+                breakpoints={{
+                    300: {
+                        slidesPerView: 2,
+                        spaceBetween: 10,
+                    },
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 40,
+                    },
+                    1024: {
+                        slidesPerView: 6,
+                        spaceBetween: 20,
+                    },
+                }}
+                className="mySwiper"
+            >
 
-            {movies
-                .slice(0, 10)
-                .map(movie => (
-                    <SwiperSlide key={movie.id}>
-                        <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="rounded-lg shadow-md" />
-                    </SwiperSlide>
-                ))}
-        </Swiper>
-    </div>
+                {movies
+                    .slice(0, 10)
+                    .map(movie => (
+                        <SwiperSlide key={movie.id}>
+                            <NavLink to={`/movie/${movie.id}`}>
+                                <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} className="rounded-lg shadow-md" />
+                            </NavLink>
+                        </SwiperSlide>
+                    ))}
+            </Swiper>
+        </div>
     )
 }
