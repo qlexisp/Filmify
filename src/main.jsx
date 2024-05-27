@@ -50,7 +50,7 @@ const router = createBrowserRouter([
   errorElement: <NotFound />
 },
 {
-  path: '/TopRated',
+  path: '/Top',
   element: <FullTopRatedMovies />,
   errorElement: <NotFound />
 }

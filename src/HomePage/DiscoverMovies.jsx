@@ -28,41 +28,36 @@ export default function DiscoverMovies() {
 
     return (
         <>
-            <div className="mb-8 lg:mx-20 md:mx-6">
+            <div className="mb-8 lg:mx-20 mx-6">
                 <Swiper pagination={true}
-                    modules={[Pagination, Autoplay]}
+                    modules={[Pagination]}
                     autoplay={{ delay: 5000 }}
                     className="text-[#EEEEEE] my-8 h-full w-full rounded-2xl">
                     {movies
                         .slice(0, 10)
                         .map(movie => (
                             <SwiperSlide key={movie.id}>
-                                <div className="relative h-full">
-                                    <div
-                                        className="absolute inset-0 bg-cover bg-center brightness-50"
-                                        style={{
-                                            backgroundImage: `url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')`,
-                                        }}
-                                    />
-                                    <div className="w-full h-full relative flex py-8 px-8">
-                                        <img className="md:w-[80px] md:h-auto lg:w-[150px] lg:h-auto z-10 rounded-lg shadow-md mr-8" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+                                <div className="bg-cover bg-center flex py-8 px-8"
+                                    style={{
+                                        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')`,
+                                    }}
+                                >
+                                    <img className="md:w-[80px] md:h-auto lg:w-[150px] lg:h-auto z-10 rounded-lg shadow-md mr-8" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
 
-                                        <div className="text-[#EEEEEE] mt-2">
+                                    <div className="text-[#EEEEEE] mt-2 hidden md:block lg:block">
+                                        <h2 className="mb-4 text-2xl font-bold lg:text-3xl">{movie.title}</h2>
 
-                                            <h2 className="mb-4 text-2xl font-bold lg:text-3xl">{movie.title}</h2>
+                                        <p className="lg:block lg:text-[#EEEEEE] lg:w-[95%]">{movie.overview.length ? `${movie.overview.substring(0, 300)}...` : movie.overview}</p>
 
-                                            <p className="lg:block lg:text-[#EEEEEE] lg:w-[95%]">{movie.overview.length ? `${movie.overview.substring(0, 300)}...` : movie.overview}</p>
+                                        <ul className="flex items-center mt-2 text-[#EEEEEE]">
+                                            <li className="mr-4 font-bold">⭐ {movie.vote_average > 3 ? `${movie.vote_average.toFixed(1)}` : movie.vote_average} </li>
+                                            <li className="font-bold">{movie.release_date ? new Date(movie.release_date).getFullYear() : "?"}</li>
+                                        </ul>
 
-                                            <ul className="flex items-center mt-2 text-[#EEEEEE]">
-                                                <li className="mr-4 font-bold">⭐ {movie.vote_average > 3 ? `${movie.vote_average.toFixed(1)}` : movie.vote_average} </li>
-                                                <li className="font-bold">{movie.release_date ? new Date(movie.release_date).getFullYear() : "?"}</li>
-                                            </ul>
+                                        <button className="px-2 py-3 mt-4 font-bold bg-blue-600 rounded hover:bg-blue-700 transition duration-300">
+                                            <NavLink to={`/movie/${movie.id}`}>Read More</NavLink>
+                                        </button>
 
-                                            <button className="px-2 py-3 mt-4 font-bold bg-blue-600 rounded hover:bg-blue-700 transition duration-300">
-                                                <NavLink to={`/movie/${movie.id}`}>Read More</NavLink>
-                                            </button>
-
-                                        </div>
                                     </div>
                                 </div>
                             </SwiperSlide>

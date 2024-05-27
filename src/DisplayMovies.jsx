@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom"
 
 export default function DisplayMovies({ movies }) {
     return (
-        <div className="flex grid flex-col mx-6 text-[#EEEEEE] lg:grid-cols-6 md:grid-cols-4 md:gap-5 lg:gap-5 lg:mx-20 lg:my-6">
+        <div className="flex grid flex-col mx-6 text-[#EEEEEE] lg:grid-cols-6 md:grid-cols-4 md:gap-5 lg:gap-5 lg:mx-20 lg:my-5 md:my-5 my-5">
             {movies.map(movie => (
                 <div key={movie.id} className="flex items-center justify-center my-4">
                     <div className="flex flex-col w-full h-full">

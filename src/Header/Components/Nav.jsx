@@ -14,7 +14,7 @@ export default function Nav() {
                 <NavLink to="/" className="mb-2 mr-2 text-xl lg:font-semibold md:font-semibold md:mb-0 md:text-base lg:mb-0 lg:text-base hover:duration-300 hover:text-white">Home</NavLink>
                 <a href="#ok" className="text-xl mb-2 mr-2 lg:mb-0 md:mb-0 md:text-base md:font-semibold lg:text-base lg:font-semibold hover:duration-300 hover:text-white">Genres</a>
                 <NavLink to="/Upcoming" className="mb-2 mr-2 text-xl lg:font-semibold md:font-semibold md:mb-0 md:text-base lg:mb-0 lg:text-base hover:duration-300 hover:text-white">Upcoming</NavLink>
-                <NavLink to="/TopRated" className="text-xl md:text-base md:font-semibold lg:text-base lg:font-semibold hover:duration-300 hover:text-white">Top Rated</NavLink>
+                <NavLink to="/Top" className="text-xl md:text-base md:font-semibold lg:text-base lg:font-semibold hover:duration-300 hover:text-white">Top Rated</NavLink>
             </div>
         </nav>
     )
