@@ -1,10 +1,11 @@
 import { NavLink } from "react-router-dom"
+import SearchBar from "./SearchBar";
 
 export default function SearchResult({ movies }) {
     return (
         <div className="bg-[#191919]">
             <div className="mx-6 my-6 lg:mx-20">
-                <h2 className="text-4xl font-bold text-[#EEEEEE]"></h2>
+                <SearchBar />
             </div>
             <div className="flex grid flex-col mx-6 text-[#EEEEEE] lg:grid-cols-6 lg:gap-5 lg:mx-20">
                 {movies.map(movie => (
