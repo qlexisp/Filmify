@@ -25,7 +25,7 @@ export default function TopRatedMovies() {
     return (
         <>
             <div className="mx-6 mt-4 lg:mx-20 text-[#EEEEEE]">
-                <h2 className="text-2xl font-bold mb-2">Top Rated Movies</h2>
+                <h2 className="text-2xl font-bold mb-2"><NavLink to="/top-rated">Top Rated Movies</NavLink></h2>
                 <Swiper
                     slidesPerView={3}
                     spaceBetween={30}

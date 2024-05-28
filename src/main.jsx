@@ -45,19 +45,17 @@ const router = createBrowserRouter([
     errorElement: <NotFound />
   },
   {
-  path: '/Upcoming',
+  path: '/upcoming',
   element: <FullUpComingMovies />,
   errorElement: <NotFound />
 },
 {
-  path: '/Top',
+  path: '/top-rated',
   element: <FullTopRatedMovies />,
   errorElement: <NotFound />
 }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
 )

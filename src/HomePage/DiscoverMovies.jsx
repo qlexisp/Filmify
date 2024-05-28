@@ -42,7 +42,7 @@ export default function DiscoverMovies() {
                                         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://image.tmdb.org/t/p/original${movie.backdrop_path}')`,
                                     }}
                                 >
-                                    <img className="md:w-[80px] md:h-auto lg:w-[150px] lg:h-auto z-10 rounded-lg shadow-md mr-8" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+                                    <img className="md:w-[180px] md:h-auto lg:w-[150px] lg:h-auto z-10 rounded-lg shadow-md mr-8" src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
 
                                     <div className="text-[#EEEEEE] mt-2 hidden md:block lg:block">
                                         <h2 className="mb-4 text-2xl font-bold lg:text-3xl">{movie.title}</h2>

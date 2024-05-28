@@ -25,7 +25,7 @@ export default function UpcomingMovies() {
 
     return (
         <div className="mx-6 lg:mx-20 text-[#EEEEEE]">
-            <h2 className="text-2xl font-bold mb-2">Upcoming Movies</h2>
+            <h2 className="text-2xl font-bold mb-2"><NavLink to="/upcoming">Upcoming Movies</NavLink></h2>
             <Swiper
                 slidesPerView={3}
                 autoplay={{ delay: 5000 }}

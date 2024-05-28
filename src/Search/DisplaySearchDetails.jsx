@@ -29,9 +29,7 @@ export default function DisplaySearchDetails() {
                 <SearchBar />
                 {movie ? (
                     <div className="flex flex-col pb-12 my-12 lg:flex-row lg:mx-20">
-                        <div className="flex items-center justify-center">
-                            <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="bg-gray-600 rounded-lg w-[90%] h-[90%] mb-6 lg:w-[300px] lg:h-auto lg:bg-contain" />
-                        </div>
+                        <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="flex-none mx-auto bg-gray-600 rounded-lg w-[90%] h-[90%] mb-6 lg:w-[300px] lg:h-auto lg:bg-contain" />
                         <div className="mx-6 lg:mt-6">
                             <h2 className="text-3xl font-bold text-[#EEEEEE]">{movie.title}</h2>
                             <ul className="flex items-center mt-2 text-[#EEEEEE]">
