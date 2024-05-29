@@ -14,11 +14,11 @@ export default function SearchBar() {
         navigate(`/search/${query}`);
     };
     return (
-        <form className="flex items-center justify-center mt-8" onSubmit={searchMovie}>
+        <form className="flex justify-center mt-8 mx-6 md:mx-18 lg:mx-20" onSubmit={searchMovie}>
             <label className="sr-only" htmlFor="query">Enter a movie: </label><br />
-            <div className="relative flex flex-col items-center">
+            <div className="relative flex flex-col items-center w-full max-w-full">
                 <input
-                    className="py-2 px-[18vw] text-white bg-gray-600 rounded-full md:px-[30vw] lg:px-[32vw]"
+                    className="py-2 text-center pr text-white bg-gray-600 rounded-full w-full"
                     type="text"
                     name="query"
                     value={query}
