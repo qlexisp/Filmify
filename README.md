@@ -2,6 +2,12 @@
 
 Filmify est une application web responsive développée en React, exploitant l'API de The Movie Database (TMDB). Cette plateforme permet aux utilisateurs de rechercher des films, d'afficher les détails des films, de parcourir différentes catégories et genres de films, tout en offrant une expérience utilisateur fluide et attrayante. Le design est soigneusement conçu en utilisant Tailwind CSS.
 
+## 🌐 Consulter le site
+
+Le site Filmify est disponible en ligne et peut être consulté à l'adresse suivante : [Filmify sur Vercel](https://filmify-alpha.vercel.app/)
+
+Profitez d'une expérience cinématographique immersive dès maintenant !
+
 ## Fonctionnalités
 
 - 🔍 **Recherche de films** : Recherchez des films par titre et possibilité de partager une recherche via l'url.
