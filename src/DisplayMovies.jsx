@@ -7,7 +7,7 @@ export default function DisplayMovies({ movies }) {
                 <div key={movie.id} className="flex items-center justify-center my-4">
                     <div className="flex flex-col w-full h-full">
                         <NavLink to={`/movie/${movie.id}`}>
-                            <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/src/assets/poster_unavailable.jpg'} alt={movie.title} className="w-auto h-auto bg-gray-600 rounded-lg transition-transform transform scale-100 hover:scale-105" />
+                            <img src={movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : '/assets/poster_unavailable.jpg'} alt={movie.title} className="w-auto h-auto bg-gray-600 rounded-lg transition-transform transform scale-100 hover:scale-105" />
                         </NavLink>
                         <p className="mt-4 text-2xl font-bold md:text-sm lg:text-sm">{movie.title.length > 20 ? `${movie.title.substring(0, 25)}...` : movie.title}</p>
                         <div className="flex items-center justify-center justify-between mt-2">
