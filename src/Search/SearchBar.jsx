@@ -25,7 +25,7 @@ export default function SearchBar() {
                     onChange={handleInputChange}
                     placeholder="Movies, dramas & other..." />
                 <button className="absolute bottom-0 left-0 px-4 py-2 rounded-full" type="submit">
-                    <img src="/src/assets/search.png" className="w-6 h-6" />
+                    <img src="/public/assets/search.png" className="w-6 h-6" />
                 </button>
             </div>
         </form>
