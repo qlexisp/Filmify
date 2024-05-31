@@ -30,5 +30,5 @@ Profitez d'une expérience cinématographique immersive dès maintenant !
 ## 📷 Captures d'écran
 
 ![Homepage](https://i.ibb.co/mGt7kBr/screencapture-filmify-git-main-qlexisps-projects-vercel-app-2024-05-31-14-59-56.png)
-![Search Result](https://i.ibb.co/2KYrLD0/screencapture-filmify-git-main-qlexisps-projects-vercel-app-search-evangelion-2024-05-31-15-11-08.png)
+![Search Result](https://i.ibb.co/KbGxTqn/screencapture-filmify-alpha-vercel-app-search-evangelion-2024-05-31-16-02-46.png)
 ![Movie Details](https://i.ibb.co/xzPrwDv/screencapture-filmify-git-main-qlexisps-projects-vercel-app-movie-550-2024-05-31-15-01-41.png)
